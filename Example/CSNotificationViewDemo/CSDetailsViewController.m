@@ -17,7 +17,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (IBAction)didPushBack:(id)sender

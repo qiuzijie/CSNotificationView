@@ -72,8 +72,6 @@
              style:(CSNotificationViewStyle)style
            message:(NSString *)message
 {
-    
-    
     [CSNotificationView showInViewController:viewController
                          tintColor:[CSNotificationView blurTintColorForStyle:style]
                              image:[CSNotificationView imageForStyle:style]
@@ -109,7 +107,6 @@
         
         //Blur view
         {
-            
             if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1) {
                 //Use native effects
                 self.blurView = [[CSNativeBlurView alloc] initWithFrame:CGRectZero];
@@ -165,8 +162,7 @@
                 _textLabel.minimumScaleFactor = 0.6;
                 _textLabel.lineBreakMode = NSLineBreakByTruncatingTail;
                 
-                UIFontDescriptor* textLabelFontDescriptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleBody];
-                _textLabel.font = [UIFont fontWithDescriptor:textLabelFontDescriptor size:17.0f];
+                _textLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:17];
                 _textLabel.adjustsFontSizeToFitWidth = YES;
                 
                 [self addSubview:_textLabel];
@@ -384,7 +380,7 @@
 {
     CGFloat top = MIN([UIApplication sharedApplication].statusBarFrame.size.height, [UIApplication sharedApplication].statusBarFrame.size.width);
     
-    if (self.parentNavigationController && !self.parentNavigationController.navigationBarHidden) {
+    if (self.parentNavigationController && !(self.parentNavigationController.navigationBarHidden || self.parentNavigationController.navigationBar.hidden)) {
         
         top += CGRectGetHeight(self.parentNavigationController.navigationBar.frame);
     }
@@ -543,10 +539,10 @@
     
     switch (style) {
         case CSNotificationViewStyleSuccess:
-            matchedImage = [UIImage imageWithContentsOfFile:[assetsBundle pathForResource:@"checkmark" ofType:@"png"]];
+            matchedImage = [UIImage imageWithContentsOfFile:[assetsBundle pathForResource:@"success" ofType:@"png"]];
             break;
         case CSNotificationViewStyleError:
-            matchedImage = [UIImage imageWithContentsOfFile:[assetsBundle pathForResource:@"exclamationMark" ofType:@"png"]];
+            matchedImage = [UIImage imageWithContentsOfFile:[assetsBundle pathForResource:@"danger" ofType:@"png"]];
             break;
         default:
             break;
@@ -559,10 +555,10 @@
     UIColor* blurTintColor;
     switch (style) {
         case CSNotificationViewStyleSuccess:
-            blurTintColor = [UIColor colorWithRed:0.21 green:0.72 blue:0.00 alpha:1.0];
+            blurTintColor = [UIColor colorWithRed:9/255.0 green:199/255.0 blue:131/255.0 alpha:1.0];
             break;
         case CSNotificationViewStyleError:
-            blurTintColor = [UIColor redColor];
+            blurTintColor = [UIColor colorWithRed:243/255.0 green:92/255.0 blue:92/255.0 alpha:1.0];
             break;
         default:
             break;

@@ -33,7 +33,7 @@
 
 - (void)setBlurTintColor:(UIColor *)tintColor
 {
-    self.tintColorView.backgroundColor = [tintColor colorWithAlphaComponent:0.6];
+    self.tintColorView.backgroundColor = [tintColor colorWithAlphaComponent:1];
 }
 
 @end
