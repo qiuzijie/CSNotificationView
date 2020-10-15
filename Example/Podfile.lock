@@ -2,15 +2,20 @@ PODS:
   - CSNotificationView (0.5.4)
 
 DEPENDENCIES:
-  - CSNotificationView (from `../`)
+  - CSNotificationView (from `https://github.com/qiuzijie/CSNotificationView.git`)
 
 EXTERNAL SOURCES:
   CSNotificationView:
-    :path: "../"
+    :git: https://github.com/qiuzijie/CSNotificationView.git
+
+CHECKOUT OPTIONS:
+  CSNotificationView:
+    :commit: 7c15812b70b33951faae5c659610568ee85b9a09
+    :git: https://github.com/qiuzijie/CSNotificationView.git
 
 SPEC CHECKSUMS:
   CSNotificationView: 0792f5220163c2befaf1a9716aa3d5a7d6bd4fb1
 
-PODFILE CHECKSUM: f4fddefb75e9a100b7ba088b458a9380505e17e4
+PODFILE CHECKSUM: 4561d516780b58a22522bbc52da1804988a683dc
 
 COCOAPODS: 1.9.1

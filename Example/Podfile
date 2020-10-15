@@ -4,6 +4,6 @@ platform :ios, "7.0"
 # use_frameworks!
 
 target "CSNotificationViewDemo" do
-    pod "CSNotificationView", :path => "../"
+	pod 'CSNotificationView',:git=>'https://github.com/qiuzijie/CSNotificationView.git'
 end
 
